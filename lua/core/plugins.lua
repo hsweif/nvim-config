@@ -50,6 +50,9 @@ return require('packer').startup(function()
 	use 'simrat39/rust-tools.nvim'
 	use 'simrat39/symbols-outline.nvim'
 
+    -- formatter, linter
+    use('jose-elias-alvarez/null-ls.nvim')
+    use('MunifTanjim/prettier.nvim')
 	-- git
 	use {
 		'lewis6991/gitsigns.nvim',
