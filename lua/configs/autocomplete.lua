@@ -102,6 +102,9 @@ function M.config()
         -- ... Your other configuration ...
     })
 
+    require("mason").setup()
+    require("mason-lspconfig").setup()
+
     -- List of all pre-configured LSP servers:
     -- github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
     require 'lspconfig'.gopls.setup {}

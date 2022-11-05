@@ -59,6 +59,12 @@ return require('packer').startup(function()
 		tag = 'release',
 	}
 
+    -- mason for lsp management
+    use {
+        "williamboman/mason.nvim",
+        "williamboman/mason-lspconfig.nvim",
+    }
+
 	-- status line
 	use {
 		'nvim-lualine/lualine.nvim',
