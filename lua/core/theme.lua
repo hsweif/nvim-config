@@ -4,13 +4,14 @@
 
 -- sonokai
 --sonokai styles: default, atlantis, andromeda, shusia, maia, espresso
---vim.g.sonokai_style = 'default'
---vim.g.sonokai_enable_italic = 0
---vim.g.sonokai_disable_italic_comment = 0
---vim.cmd('colorscheme sonokai')
+-- vim.g.sonokai_transparent_background = true
+-- vim.g.sonokai_style = 'atlantis'
+-- vim.g.sonokai_enable_italic = 1
+-- vim.g.sonokai_disable_italic_comment = 0
+-- vim.cmd('colorscheme sonokai')
 
 -- tokyo night
--- vim.g.tokyodark_transparent_background = false
+--vim.g.tokyodark_transparent_background = false
 --vim.g.tokyodark_enable_italic_comment = true
 --vim.g.tokyodark_enable_italic = true
 --vim.g.tokyodark_color_gamma = "1.0"
@@ -46,7 +47,8 @@
 --vim.cmd("colorscheme kanagawa")
 
 -- edge
-vim.g.edge_style = 'neon' -- neon, aura
+vim.g.edge_style = 'aura' -- neon, aura
+-- vim.g.edge_transparent_background = true
 vim.g.edge_better_performance = 1
 vim.cmd("colorscheme edge")
 
