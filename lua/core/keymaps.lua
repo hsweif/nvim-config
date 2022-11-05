@@ -15,17 +15,18 @@ local function set_bg_dark()
 end
 
 -- keymaps
-vim.keymap.set('i', '<C-g>', '<esc>')
+vim.keymap.set('i', 'jj', '<esc>')
 vim.keymap.set('i', '<C-;>', '::') -- for C++ and Rust
 vim.keymap.set('n', '<leader>vl', set_bg_light)
 vim.keymap.set('n', '<leader>vd', set_bg_dark)
 vim.keymap.set('n', '<leader>', ':')
 -- f: file tree
-vim.keymap.set('n', '<F3>', ':NvimTreeToggle<cr>')
+vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<cr>')
 vim.keymap.set('n', '<leader>ft', ':NvimTreeToggle<cr>')
 vim.keymap.set('n', '<leader>ff', ':NvimTreeFocus<cr>')
 -- y: telescope
-vim.keymap.set('n', '<F9>', function() require 'telescope.builtin'.find_files {} end)
+vim.keymap.set('n', '<leader>yf', function() require 'telescope.builtin'.find_files {} end)
+vim.keymap.set('n', '<leader>ys', function() require 'telescope.builtin'.live_grep {} end)
 vim.keymap.set('n', '<F10>', function() require 'telescope.builtin'.git_files {} end)
 vim.keymap.set('n', '<F11>', function() require 'telescope.builtin'.buffers {} end)
 vim.keymap.set({ 'n', 'i' }, '<C-p>', function() require 'telescope.builtin'.registers {} end)
@@ -47,7 +48,6 @@ vim.keymap.set('n', '<leader>bd', ':Bdelete<cr>')
 vim.keymap.set('n', '<leader>pi', ':PackerInstall<cr>')
 vim.keymap.set('n', '<leader>pc', ':PackerClean<cr>')
 -- s: search
-vim.keymap.set('n', '<leader>ss', '/')
 vim.keymap.set('n', '<leader>sw', '/\\<lt>\\><left><left>')
 -- l/g/w: language
 -- l: general
