@@ -2,7 +2,7 @@ local M = {}
 
 function M.config()
     vim.api.nvim_create_autocmd('FileType', {
-        pattern = { "typescript" },
+        pattern = { "typescript", "typescriptreact" },
         callback = function(_)
             -- Do something based on the value of ft
             vim.opt.tabstop     = 2

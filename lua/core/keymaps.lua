@@ -40,10 +40,9 @@ vim.keymap.set('n', '<m-9>', '<c-w><')
 vim.keymap.set('n', '<m-0>', '<c-w>>')
 vim.keymap.set('n', '<m-->', '<c-w>-')
 vim.keymap.set('n', '<m-=>', '<c-w>+')
--- buffer
-vim.keymap.set('n', '<C-l>', ':bn<cr>')
-vim.keymap.set('n', '<C-h>', ':bp<cr>')
-vim.keymap.set('n', '<leader>x', ':Bdelete<cr>')
+-- tab navigation
+vim.keymap.set('n', '<C-l>', ':tabprevious<cr>')
+vim.keymap.set('n', '<C-h>', ':tabnext<cr>')
 -- p: plugins
 vim.keymap.set('n', '<leader>pi', ':PackerInstall<cr>')
 vim.keymap.set('n', '<leader>pc', ':PackerClean<cr>')
