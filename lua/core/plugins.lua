@@ -73,6 +73,12 @@ return require('packer').startup(function()
     -- floating terminal
     use 'akinsho/toggleterm.nvim'
 
+    -- todo highlight
+    use {
+        "folke/todo-comments.nvim",
+        requires = "nvim-lua/plenary.nvim",
+    }
+
     -- file telescope
     use {
         'nvim-telescope/telescope.nvim',
