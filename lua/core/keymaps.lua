@@ -22,7 +22,6 @@ vim.keymap.set('n', '<leader>vd', set_bg_dark)
 vim.keymap.set('n', '<leader>', ':')
 -- f: file tree
 vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<cr>')
-vim.keymap.set('n', '<leader>ft', ':NvimTreeToggle<cr>')
 vim.keymap.set('n', '<leader>ff', ':NvimTreeFocus<cr>')
 -- y: telescope
 vim.keymap.set('n', '<leader>yf', function() require 'telescope.builtin'.find_files {} end)
@@ -46,8 +45,9 @@ vim.keymap.set('n', '<C-h>', ':tabnext<cr>')
 -- p: plugins
 vim.keymap.set('n', '<leader>pi', ':PackerInstall<cr>')
 vim.keymap.set('n', '<leader>pc', ':PackerClean<cr>')
--- s: search
+-- s: search / hop
 vim.keymap.set('n', '<leader>sw', '/\\<lt>\\><left><left>')
+vim.keymap.set('n', '<leader>sf', ':HopWord<Cr>')
 -- l/g/w: language
 -- l: general
 -- g: goto
