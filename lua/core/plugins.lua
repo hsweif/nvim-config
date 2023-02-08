@@ -30,6 +30,7 @@ return require('packer').startup(function()
     use 'sainnhe/edge'
     use 'B4mbus/oxocarbon-lua.nvim'
     use 'Th3Whit3Wolf/one-nvim'
+    use 'MattesGroeger/vim-bookmarks'
 
     -- file tree
     use {
@@ -49,6 +50,10 @@ return require('packer').startup(function()
     use 'nvim-treesitter/nvim-treesitter'
     use 'simrat39/rust-tools.nvim'
     use 'simrat39/symbols-outline.nvim'
+
+    -- golang enhancement
+    use 'ray-x/go.nvim'
+    use 'ray-x/guihua.lua' -- recommended if need floating window support
 
     -- formatter, linter
     use('MunifTanjim/prettier.nvim')
@@ -99,6 +104,7 @@ return require('packer').startup(function()
 
     -- auto-pair bracket
     use "windwp/nvim-autopairs"
+
 
     -- decorated scrollbar
     --use 'lewis6991/satellite.nvim'

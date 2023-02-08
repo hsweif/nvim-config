@@ -49,6 +49,7 @@ require('image').setup {
     render_using_dither = true,
 }
 require("nvim-autopairs").setup()
+require('go').setup()
 
 -- Load plugin configs
 -- plugins without extra configs are configured directly here

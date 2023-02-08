@@ -102,3 +102,7 @@ vim.keymap.set('n', '<leader>hR', ':Gitsigns reset_buffer')
 vim.keymap.set('n', '<leader>hb', ':Gitsigns blame_line<cr>')
 vim.keymap.set('n', '<leader>hd', ':Gitsigns diffthis<cr>')
 vim.keymap.set('n', '<leader>hs', ':<C-U>Gitsigns select_hunk<CR>')
+
+-- m: bookmark
+vim.keymap.set('n', '<leader>mk', ':BookmarkToggle<cr>')
+vim.keymap.set('n', '<leader>ma', ':BookmarkShowAll<cr>')
