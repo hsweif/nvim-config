@@ -20,12 +20,16 @@ vim.keymap.set('i', '<C-;>', '::') -- for C++ and Rust
 vim.keymap.set('n', '<leader>vl', set_bg_light)
 vim.keymap.set('n', '<leader>vd', set_bg_dark)
 vim.keymap.set('n', '<leader>', ':')
+vim.keymap.set('n', 'j', 'gj')
+vim.keymap.set('n', 'k', 'gk')
 -- f: file tree
 vim.keymap.set('n', '<C-n>', ':NvimTreeToggle<cr>')
 vim.keymap.set('n', '<leader>ff', ':NvimTreeFocus<cr>')
 -- y: telescope
 vim.keymap.set('n', '<leader>yf', function() require 'telescope.builtin'.find_files {} end)
 vim.keymap.set('n', '<leader>ys', function() require 'telescope.builtin'.live_grep {} end)
+vim.keymap.set('n', '<leader>yd',
+    function() require 'telescope.builtin'.live_grep { search_dirs = { '.', '$GOPATH/pkg/mod/' } } end)
 vim.keymap.set('n', '<F10>', function() require 'telescope.builtin'.git_files {} end)
 vim.keymap.set('n', '<F11>', function() require 'telescope.builtin'.buffers {} end)
 vim.keymap.set({ 'n', 'i' }, '<C-p>', function() require 'telescope.builtin'.registers {} end)
