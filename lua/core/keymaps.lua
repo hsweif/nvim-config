@@ -107,6 +107,9 @@ vim.keymap.set('n', '<leader>hb', ':Gitsigns blame_line<cr>')
 vim.keymap.set('n', '<leader>hd', ':Gitsigns diffthis<cr>')
 vim.keymap.set('n', '<leader>hs', ':<C-U>Gitsigns select_hunk<CR>')
 
+-- c: copilot
+vim.keymap.set('i', '<leader>ca', 'copilot#Accept("<CR>")', { silent = true, expr = true })
+
 -- m: bookmark
 vim.keymap.set('n', '<leader>mk', ':BookmarkToggle<cr>')
 vim.keymap.set('n', '<leader>ma', ':BookmarkShowAll<cr>')

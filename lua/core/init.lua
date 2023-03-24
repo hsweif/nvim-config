@@ -46,6 +46,22 @@ vim.g.loaded_remote_plugins    = 1
 vim.g.leetcode_browser           = 'chrome'
 vim.g.python3_host_prog          = '/usr/local/bin/python3'
 vim.g.leetcode_solution_filetype = 'golang'
+
+-- copilot configs
+vim.g.copilot_no_tab_map = true
+vim.g.copilot_filetypes = {
+    ["*"] = false,
+    ["javascript"] = true,
+    ["typescript"] = true,
+    ["lua"] = true,
+    ["rust"] = true,
+    ["c"] = true,
+    ["c#"] = true,
+    ["c++"] = true,
+    ["go"] = true,
+    ["python"] = true,
+}
+
 require("core.theme")
 
 require('image').setup {

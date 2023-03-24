@@ -132,6 +132,8 @@ return require('packer').startup(function()
     -- leetcode plugin
     use { 'ianding1/leetcode.vim' }
 
+    -- GitHub copilot
+    use { 'github/copilot.vim' }
 
     -- decorated scrollbar
     --use 'lewis6991/satellite.nvim'
