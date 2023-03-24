@@ -62,6 +62,11 @@ return require('packer').startup(function()
         'lewis6991/gitsigns.nvim',
         tag = 'release',
     }
+    use {
+        'akinsho/git-conflict.nvim', tag = "*", config = function()
+            require('git-conflict').setup()
+        end
+    }
 
     -- mason for lsp management
     use {
@@ -113,6 +118,19 @@ return require('packer').startup(function()
             require 'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
         end
     }
+
+    -- debugger and dap
+    use 'mfussenegger/nvim-dap'
+    use {
+        'leoluz/nvim-dap-go',
+        config = function()
+            require('dap-go').setup()
+        end
+    }
+    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
+
+    -- leetcode plugin
+    use { 'ianding1/leetcode.vim' }
 
 
     -- decorated scrollbar
