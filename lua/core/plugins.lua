@@ -38,6 +38,15 @@ return require('packer').startup(function()
         requires = 'kyazdani42/nvim-web-devicons'
     }
 
+    -- dim unused vars
+    use {
+        "narutoxy/dim.lua",
+        requires = { "nvim-treesitter/nvim-treesitter", "neovim/nvim-lspconfig" },
+        config = function()
+            require('dim').setup({})
+        end
+    }
+
     -- language
     use 'neovim/nvim-lspconfig'
     use 'glepnir/lspsaga.nvim'

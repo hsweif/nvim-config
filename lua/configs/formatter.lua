@@ -5,6 +5,7 @@ function M.config()
     prettier.setup({
         bin = 'prettier', -- or `'prettierd'` (v0.22+)
         filetypes = {
+            "scss",
             "css",
             "graphql",
             "html",
