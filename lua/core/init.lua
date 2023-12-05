@@ -48,27 +48,24 @@ vim.g.python3_host_prog          = '/usr/local/bin/python3'
 vim.g.leetcode_solution_filetype = 'golang'
 
 -- copilot configs
-vim.g.copilot_no_tab_map = true
-vim.g.copilot_filetypes = {
-    ["*"] = false,
-    ["javascript"] = true,
-    ["typescript"] = true,
-    ["lua"] = true,
-    ["rust"] = true,
-    ["c"] = true,
-    ["c#"] = true,
-    ["c++"] = true,
-    ["go"] = true,
-    ["python"] = true,
-}
+-- vim.g.copilot_no_tab_map = true
+-- vim.g.copilot_filetypes = {
+--     ["*"] = false,
+--     ["javascript"] = true,
+--     ["typescript"] = true,
+--     ["typescriptreact"] = true,
+--     ["css"] = true,
+--     ["lua"] = true,
+--     ["rust"] = true,
+--     ["c"] = true,
+--     ["c#"] = true,
+--     ["c++"] = true,
+--     ["go"] = true,
+--     ["python"] = true,
+-- }
 
 require("core.theme")
 
-require('image').setup {
-    min_padding = 5,
-    show_label = true,
-    render_using_dither = true,
-}
 require("nvim-autopairs").setup()
 require('go').setup()
 require('hop').setup()

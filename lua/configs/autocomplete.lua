@@ -107,7 +107,7 @@ function M.config()
     -- List of all pre-configured LSP servers:
     -- github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
     require 'lspconfig'.gopls.setup {}
-    local servers = { 'clangd', 'rust_analyzer', 'pylsp', 'sumneko_lua', 'tsserver', 'gopls', 'cssls' }
+    local servers = { 'clangd', 'rust_analyzer', 'pylsp', 'lua_ls', 'tsserver', 'gopls', 'cssls' }
     for _, lsp in pairs(servers) do
         require('lspconfig')[lsp].setup {
             on_attach = on_attach
@@ -129,10 +129,8 @@ function M.config()
         end,
     })
 
-    local saga = require 'lspsaga'
-
     -- use default config
-    saga.init_lsp_saga({
+    require('lspsaga').setup({
         -- Options with default value
         -- "single" | "double" | "rounded" | "bold" | "plus"
         border_style = "bold",
@@ -238,7 +236,6 @@ function M.config()
     })
 
     require('rust-tools').setup()
-
 end
 
 return M

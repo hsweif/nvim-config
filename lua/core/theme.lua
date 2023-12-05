@@ -46,16 +46,21 @@
 
 --vim.cmd("colorscheme kanagawa")
 
--- edge
-vim.g.edge_style = 'aura' -- neon, aura
--- vim.g.edge_transparent_background = true
-vim.g.edge_better_performance = 1
-vim.cmd("colorscheme edge")
+if vim.g.vscode then
+    -- VSCode extension
+else
+    -- ordinary Neovim
+    -- edge
+    vim.g.edge_style = 'aura' -- neon, aura
+    -- vim.g.edge_transparent_background = true
+    vim.g.edge_better_performance = 1
+    vim.cmd("colorscheme edge")
 
--- github
--- vim.cmd("colorscheme github_dark_default")
+    -- github
+    -- vim.cmd("colorscheme github_dark_default")
 
--- oxocarbon
--- vim.cmd("colorscheme oxocarbon-lua")
+    -- oxocarbon
+    -- vim.cmd("colorscheme oxocarbon-lua")
 
-vim.cmd("set background=dark")
+    vim.cmd("set background=dark")
+end

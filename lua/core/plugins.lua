@@ -113,9 +113,6 @@ return require('packer').startup(function()
     -- english grammar check
     use 'rhysd/vim-grammarous'
 
-    -- ascii image
-    use 'samodostal/image.nvim'
-
     -- auto-pair bracket
     use "windwp/nvim-autopairs"
 
