@@ -135,6 +135,12 @@ return require('packer').startup(function()
     -- GitHub copilot
     use { 'github/copilot.vim' }
 
+    -- GitLinker
+    use {
+        'ruifm/gitlinker.nvim',
+        requires = 'nvim-lua/plenary.nvim',
+    }
+
     -- decorated scrollbar
     --use 'lewis6991/satellite.nvim'
 

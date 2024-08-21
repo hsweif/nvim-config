@@ -72,6 +72,7 @@ require('image').setup {
 require("nvim-autopairs").setup()
 require('go').setup()
 require('hop').setup()
+require("gitlinker").setup()
 
 -- Load plugin configs
 -- plugins without extra configs are configured directly here
