@@ -108,7 +108,12 @@ vim.keymap.set('n', '<leader>hd', ':Gitsigns diffthis<cr>')
 vim.keymap.set('n', '<leader>hs', ':<C-U>Gitsigns select_hunk<CR>')
 
 -- c: copilot
-vim.keymap.set('i', '<leader>ca', 'copilot#Accept("<CR>")', { silent = true, expr = true })
+vim.api.nvim_set_keymap('i', '<C-c>', 'copilot#Accept("<CR>")', { silent = true, expr = true, noremap = true })
+
+
+-- d: debug
+vim.keymap.set('n', '<leader>db', ':lua require"dap".toggle_breakpoint()<cr>')
+vim.keymap.set('n', '<leader>dc', ':lua require"dap".continue()<cr>')
 
 -- m: bookmark
 vim.keymap.set('n', '<leader>mk', ':BookmarkToggle<cr>')

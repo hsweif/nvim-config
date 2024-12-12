@@ -38,6 +38,15 @@ return require('packer').startup(function()
         requires = 'kyazdani42/nvim-web-devicons'
     }
 
+    -- dim unused vars
+    use {
+        "narutoxy/dim.lua",
+        requires = { "nvim-treesitter/nvim-treesitter", "neovim/nvim-lspconfig" },
+        config = function()
+            require('dim').setup({})
+        end
+    }
+
     -- language
     use 'neovim/nvim-lspconfig'
     use 'glepnir/lspsaga.nvim'
@@ -64,8 +73,8 @@ return require('packer').startup(function()
     }
     use {
         'akinsho/git-conflict.nvim', tag = "*", config = function()
-            require('git-conflict').setup()
-        end
+        require('git-conflict').setup()
+    end
     }
 
     -- mason for lsp management
@@ -104,9 +113,6 @@ return require('packer').startup(function()
     -- english grammar check
     use 'rhysd/vim-grammarous'
 
-    -- ascii image
-    use 'samodostal/image.nvim'
-
     -- auto-pair bracket
     use "windwp/nvim-autopairs"
 
@@ -121,13 +127,11 @@ return require('packer').startup(function()
 
     -- debugger and dap
     use 'mfussenegger/nvim-dap'
-    use {
-        'leoluz/nvim-dap-go',
-        config = function()
-            require('dap-go').setup()
-        end
-    }
+    use 'leoluz/nvim-dap-go'
+
     use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
+
+    use 'folke/neodev.nvim'
 
     -- leetcode plugin
     use { 'ianding1/leetcode.vim' }
@@ -143,5 +147,4 @@ return require('packer').startup(function()
 
     -- decorated scrollbar
     --use 'lewis6991/satellite.nvim'
-
 end)

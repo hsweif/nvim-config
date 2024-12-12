@@ -3,12 +3,12 @@ local M = {}
 function M.config()
     require('bufferline').setup {
         options = {
-            mode = "tabs", -- set to "tabs" to only show tabpages instead [buffers | tabs]
+            mode = "tabs",                       -- set to "tabs" to only show tabpages instead [buffers | tabs]
             numbers = "none",
-            close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
+            close_command = "bdelete! %d",       -- can be a string | function, see "Mouse actions"
             right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
-            left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
-            middle_mouse_command = nil, -- can be a string | function, see "Mouse actions"
+            left_mouse_command = "buffer %d",    -- can be a string | function, see "Mouse actions"
+            middle_mouse_command = nil,          -- can be a string | function, see "Mouse actions"
             -- NOTE: this plugin is designed with this icon in mind,
             -- and so changing this is NOT recommended, this is intended
             -- as an escape hatch for people who cannot bear it for whatever reason
@@ -70,7 +70,6 @@ function M.config()
             color_icons = true,
             show_buffer_icons = true, -- disable filetype icons for buffers
             show_buffer_close_icons = true,
-            show_buffer_default_icon = true, -- whether or not an unrecognised filetype should show a default icon
             show_close_icon = true,
             show_tab_indicators = true,
             persist_buffer_sort = true, -- whether or not custom sorted buffers should persist
