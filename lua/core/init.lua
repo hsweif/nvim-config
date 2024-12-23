@@ -3,9 +3,11 @@ vim.cmd('syntax on')
 vim.cmd('filetype plugin indent on')
 vim.opt.number         = true
 vim.opt.relativenumber = true
+vim.opt.numberwidth    = 5 -- Set the width for the number column (adjust as needed)
 vim.opt.termguicolors  = true
 vim.opt.shiftround     = true
 vim.opt.updatetime     = 100
+vim.opt.signcolumn = "yes:1"
 vim.opt.cursorline     = true
 vim.opt.autowrite      = true
 if (vim.fn.has('termguicolors') == 1) then
@@ -62,13 +64,26 @@ vim.g.copilot_filetypes          = {
     ["c++"] = true,
     ["go"] = true,
     ["python"] = true,
+    ["markdown"] = true,
 }
+
+-- Set indentation for JavaScript and TypeScript files
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "javascript", "typescript", "css" },
+    callback = function()
+        vim.bo.shiftwidth = 2
+        vim.bo.tabstop = 2
+    end,
+})
+
 
 require("core.theme")
 
 require("nvim-autopairs").setup()
 require('go').setup()
 require('hop').setup()
+
+require("gitlinker").setup()
 
 -- Load plugin configs
 -- plugins without extra configs are configured directly here
@@ -89,4 +104,3 @@ require("configs.formatter").config()
 require("configs.languages").config()
 require("configs.todo").config()
 require("configs.dap").config()
-

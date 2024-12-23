@@ -36,7 +36,7 @@ function M.config()
             timeout = 500,
         },
         view                 = {
-            width = 30,
+            width = 40,
             side = 'left',
             number = false,
             relativenumber = false,

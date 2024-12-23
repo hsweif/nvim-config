@@ -130,6 +130,7 @@ return require('packer').startup(function()
     use 'leoluz/nvim-dap-go'
 
     use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
+    use { "nvim-neotest/nvim-nio" }
 
     use 'folke/neodev.nvim'
 
@@ -138,6 +139,12 @@ return require('packer').startup(function()
 
     -- GitHub copilot
     use { 'github/copilot.vim' }
+
+    -- GitLinker
+    use {
+        'ruifm/gitlinker.nvim',
+        requires = 'nvim-lua/plenary.nvim',
+    }
 
     -- decorated scrollbar
     --use 'lewis6991/satellite.nvim'
