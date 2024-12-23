@@ -82,6 +82,7 @@ require("core.theme")
 require("nvim-autopairs").setup()
 require('go').setup()
 require('hop').setup()
+require("gitlinker").setup()
 
 require("gitlinker").setup()
 

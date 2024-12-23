@@ -73,8 +73,8 @@ return require('packer').startup(function()
     }
     use {
         'akinsho/git-conflict.nvim', tag = "*", config = function()
-        require('git-conflict').setup()
-    end
+            require('git-conflict').setup()
+        end
     }
 
     -- mason for lsp management
@@ -129,8 +129,12 @@ return require('packer').startup(function()
     use 'mfussenegger/nvim-dap'
     use 'leoluz/nvim-dap-go'
 
-    use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
-    use { "nvim-neotest/nvim-nio" }
+    use { "rcarriga/nvim-dap-ui",
+        requires = {
+            "mfussenegger/nvim-dap",
+            "nvim-neotest/nvim-nio"
+        }
+    }
 
     use 'folke/neodev.nvim'
 
