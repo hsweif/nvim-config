@@ -73,8 +73,8 @@ return require('packer').startup(function()
     }
     use {
         'akinsho/git-conflict.nvim', tag = "*", config = function()
-            require('git-conflict').setup()
-        end
+        require('git-conflict').setup()
+    end
     }
 
     -- mason for lsp management
@@ -106,9 +106,6 @@ return require('packer').startup(function()
 
     -- indent guide
     use "lukas-reineke/indent-blankline.nvim"
-
-    -- startup screen
-    use 'leslie255/aleph-nvim'
 
     -- english grammar check
     use 'rhysd/vim-grammarous'
@@ -142,7 +139,27 @@ return require('packer').startup(function()
     use { 'ianding1/leetcode.vim' }
 
     -- GitHub copilot
-    use { 'github/copilot.vim' }
+    -- use { 'github/copilot.vim' }
+
+    -- Bytedance Marscode
+    -- use {
+    --     "https://code.byted.org/chenjiaqi.cposture/codeverse.vim.git",
+    --     requires = {
+    --         "hrsh7th/nvim-cmp",
+    --     },
+    -- }
+
+    use {
+        "svrana/neosolarized.nvim",
+        config = function()
+            require("neosolarized").setup({
+                comment_italics = true,
+                background_set = false,
+            })
+            vim.cmd.colorscheme("neosolarized")
+        end,
+        requires = "tjdevries/colorbuddy.nvim",
+    }
 
     -- GitLinker
     use {

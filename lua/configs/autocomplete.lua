@@ -123,6 +123,24 @@ function M.config()
             },
         },
     }
+    -- Alternative for pylsp (if using)
+    require 'lspconfig'.pylsp.setup {
+        on_attach = on_attach,
+        settings = {
+            pylsp = {
+                plugins = {
+                    flake8 = {
+                        enabled = true,
+                        ignore = { "E501" } -- Example: disable line-too-long (E501)
+                    },
+                    pycodestyle = {
+                        ignore = { "W291" },
+                        maxLineLength = 120,
+                    },
+                },
+            },
+        }
+    }
 
 
     local devicons = require('nvim-web-devicons')

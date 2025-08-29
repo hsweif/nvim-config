@@ -7,12 +7,17 @@ vim.opt.numberwidth    = 5 -- Set the width for the number column (adjust as nee
 vim.opt.termguicolors  = true
 vim.opt.shiftround     = true
 vim.opt.updatetime     = 100
-vim.opt.signcolumn = "yes:1"
+vim.opt.signcolumn     = "yes:1"
 vim.opt.cursorline     = true
 vim.opt.autowrite      = true
 if (vim.fn.has('termguicolors') == 1) then
     vim.opt.termguicolors = true
 end
+vim.filetype.add({
+    extension = {
+        thrift = "idl",
+    }
+})
 -- tabs
 vim.opt.autoindent    = true
 vim.opt.tabstop       = 4
@@ -29,43 +34,43 @@ require("core.plugins")
 require("core.gui")
 -- disable some useless standard plugins to save startup time
 -- these features have been better covered by plugins
-vim.g.loaded_matchparen          = 1
-vim.g.loaded_matchit             = 1
-vim.g.loaded_logiPat             = 1
-vim.g.loaded_rrhelper            = 1
-vim.g.loaded_tarPlugin           = 1
-vim.g.loaded_gzip                = 1
-vim.g.loaded_zipPlugin           = 1
-vim.g.loaded_2html_plugin        = 1
-vim.g.loaded_shada_plugin        = 1
-vim.g.loaded_spellfile_plugin    = 1
-vim.g.loaded_netrw               = 1
-vim.g.loaded_netrwPlugin         = 1
-vim.g.loaded_tutor_mode_plugin   = 1
-vim.g.loaded_remote_plugins      = 1
+vim.g.loaded_matchparen        = 1
+vim.g.loaded_matchit           = 1
+vim.g.loaded_logiPat           = 1
+vim.g.loaded_rrhelper          = 1
+vim.g.loaded_tarPlugin         = 1
+vim.g.loaded_gzip              = 1
+vim.g.loaded_zipPlugin         = 1
+vim.g.loaded_2html_plugin      = 1
+vim.g.loaded_shada_plugin      = 1
+vim.g.loaded_spellfile_plugin  = 1
+vim.g.loaded_netrw             = 1
+vim.g.loaded_netrwPlugin       = 1
+vim.g.loaded_tutor_mode_plugin = 1
+vim.g.loaded_remote_plugins    = 1
 
 -- leetcode configs
-vim.g.leetcode_browser           = 'chrome'
-vim.g.python3_host_prog          = '/usr/local/bin/python3'
-vim.g.leetcode_solution_filetype = 'golang'
+-- vim.g.leetcode_browser           = 'chrome'
+-- vim.g.python3_host_prog          = '/usr/local/bin/python3'
+-- vim.g.leetcode_solution_filetype = 'golang'
 
 -- copilot configs
-vim.g.copilot_no_tab_map         = true
-vim.g.copilot_filetypes          = {
-    ["*"] = false,
-    ["javascript"] = true,
-    ["typescript"] = true,
-    ["typescriptreact"] = true,
-    ["css"] = true,
-    ["lua"] = true,
-    ["rust"] = true,
-    ["c"] = true,
-    ["c#"] = true,
-    ["c++"] = true,
-    ["go"] = true,
-    ["python"] = true,
-    ["markdown"] = true,
-}
+-- vim.g.copilot_no_tab_map         = true
+-- vim.g.copilot_filetypes          = {
+--     ["*"] = false,
+--     ["javascript"] = true,
+--     ["typescript"] = true,
+--     ["typescriptreact"] = true,
+--     ["css"] = true,
+--     ["lua"] = true,
+--     ["rust"] = true,
+--     ["c"] = true,
+--     ["c#"] = true,
+--     ["c++"] = true,
+--     ["go"] = true,
+--     ["python"] = true,
+--     ["markdown"] = true,
+-- }
 
 -- Set indentation for JavaScript and TypeScript files
 vim.api.nvim_create_autocmd("FileType", {
@@ -78,8 +83,6 @@ vim.api.nvim_create_autocmd("FileType", {
 
 
 require("core.theme")
-
-require("nvim-autopairs").setup()
 require('go').setup()
 require('hop').setup()
 require("gitlinker").setup()
@@ -91,14 +94,19 @@ require("gitlinker").setup()
 require("impatient")
 --require('satellite').setup()
 
-require("configs.autocomplete").config()
+-- Check if Neovim is running inside VSCode
+-- if not vim.g.vscode and not vim.g.trae then
+--     require("configs.autocomplete").config()
+--     require('marscode').setup()
+--     require("nvim-autopairs").setup()
+--     require("configs.treesitter").config()
+--     require("configs.bufferline").config()
+-- end
+
 require("configs.symbols_outline").config()
 require("configs.statusline").config()
 require("configs.filetree").config()
-require("configs.treesitter").config()
-require("configs.startscreen").config()
 require("configs.git").config()
-require("configs.bufferline").config()
 require("configs.grammar").config()
 require("configs.terminal").config()
 require("configs.formatter").config()
